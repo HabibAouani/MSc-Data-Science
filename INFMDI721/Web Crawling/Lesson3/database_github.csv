@@ -1,0 +1,257 @@
+,Name,Contributions,Location
+0,fabpot (Fabien Potencier),12947,San Francisco
+1,andrew (Andrew Nesbitt),10188,"Somerset, UK"
+2,taylorotwell (Taylor Otwell),8376,"Little Rock, AR"
+3,egoist (EGOIST),7688,"Chengdu, China"
+4,HugoGiraudel (Hugo Giraudel),7658,Berlin
+5,ornicar (Thibault Duplessis),7341,"Paris, France"
+6,bebraw (Juho Vepsäläinen),6895,"Vienna, Austria"
+7,nelsonic (Nelson),6501,London
+8,alexcrichton (Alex Crichton),6145,"San Francisco, CA"
+9,jonathanong (jongleberry),5763,"Los Angeles, CA"
+10,mikermcneil (Mike McNeil),5736,"Austin, TX"
+11,benbalter (Ben Balter),5699,"Washington, DC"
+12,jxnblk (Brent Jackson),5601,New York City
+13,yegor256 (Yegor Bugayenko),5566,"Palo Alto, CA"
+14,orta (Orta),5453,NYC / Huddersfield
+15,rstacruz (Rico Sta. Cruz),5313,"Manila, Philippines"
+16,GrahamCampbell (Graham Campbell),5135,The United Kingdom
+17,afc163 (偏右),5069,"Hangzhou, China"
+18,kamranahmedse (Kamran Ahmed),4994,Dubai
+19,joshaber (Josh Abernathy),4941,The Gem City
+20,bkeepers (Brandon Keepers),4873,
+21,kennethreitz (Kenneth Reitz),4873,"Winchester, VA"
+22,kytrinyx (Katrina Owen),4866,
+23,STRML (Samuel Reed),4855,"Milwaukee, WI"
+24,atmos (Corey Donohoe),4826,South Lake Tahoe
+25,weierophinney (Matthew Weier O'Phinney),4820,"Sioux Falls, SD, USA"
+26,agentzh (Yichun Zhang),4740,San Francisco Bay Area
+27,steipete (Peter Steinberger),4694,"Vienna, Austria"
+28,ai (Andrey Sitnik),4664,"Saint Petersburg, Russia"
+29,mikepenz (Mike Penz),4659,"Linz, Austria"
+30,nvie (Vincent Driessen),4609,Netherlands
+31,hadley (Hadley Wickham),4607,"Houston, TX"
+32,appleboy (Bo-Yi Wu),4592,"Hsinchu, Taiwan"
+33,Rich-Harris (Rich Harris),4580,NYC
+34,drnic (Dr Nic Williams),4570,"Brisbane, Australia"
+35,rafaelfranca (Rafael França),4556,"Ottawa, ON"
+36,Ocramius (Marco Pivetta),4553,Frankfurt am Main
+37,mitchellh (Mitchell Hashimoto),4541,"Los Angeles, CA"
+38,stof (Christophe Coevoet),4521,Paris
+39,IgorMinar (Igor Minar),4516,"SF Bay Area, CA"
+40,phodal (Phodal Huang),4496,"Shenzhen, China"
+41,jwiegley (John Wiegley),4475,"California, USA"
+42,geerlingguy (Jeff Geerling),4443,"St. Louis, MO"
+43,dcramer (David Cramer),4435,"San Francisco, CA"
+44,sebastianbergmann (Sebastian Bergmann),4390,"Siegburg, Germany"
+45,brunocvcunha (Bruno Volpato),4329,Worldwide
+46,ljharb (Jordan Harband),4277,"San Mateo, CA"
+47,jdalton (John-David Dalton),4139,
+48,sevilayha (Chris Sevilleja),4122,Las Vegas
+49,paulmillr (Paul Miller),4061,Worldwide
+50,tmm1 (Aman Gupta),4046,"San Francisco, CA"
+51,c9s (Yo-An Lin),3980,"Taipei, Taiwan"
+52,zcbenz (Cheng Zhao),3899,"Tokyo, Japan / China"
+53,holman (Zach Holman),3891,San Francisco
+54,kevinsawicki (Kevin Sawicki),3830,"Portland, OR"
+55,yihui (Yihui Xie),3748,"Omaha, NE"
+56,buckyroberts (Bucky Roberts),3719,"Pasadena, CA"
+57,kbrsh (Kabir Shah),3716,
+58,dmalan (David J. Malan),3704,"Cambridge, MA, USA"
+59,mhevery (Miško Hevery),3649,
+60,mgechev (Minko Gechev),3621,"California, USA"
+61,kylef (Kyle Fuller),3523,"London, England"
+62,chjj (Christopher Jeffrey (JJ)),3522,San Francisco
+63,ayende (Ayende Rahien),3444,Israel
+64,mcollina (Matteo Collina),3385,In the clouds above Italy
+65,mdo (Mark Otto),3367,"San Francisco, CA"
+66,yoshuawuyts (Yoshua Wuyts),3319,"Berlin, Germany"
+67,muan (Mu-An ✌️ Chiou),3309,"Taipei, Taiwan"
+68,kentcdodds (Kent C. Dodds),3284,"Salt Lake City, Utah, USA"
+69,jskeet (Jon Skeet),3273,"London, UK"
+70,mitsuhiko (Armin Ronacher),3253,Austria
+71,steveklabnik (Steve Klabnik),3240,Brooklyn
+72,hzoo (Henry Zhu),3188,ATL -> NYC
+73,Caged (Justin Palmer),3179,"Portland, OR"
+74,dlew (Daniel Lew),3157,Minneapolis
+75,technoweenie (risk danger olson),3156,"Louisville, CO"
+76,gaearon (Dan Abramov),3155,"London, UK"
+77,soumith (Soumith Chintala),3144,"New York, USA"
+78,feross (Feross Aboukhadijeh),3130,"Mountain View, CA"
+79,michalbe (Michał Budzyński),3103,"Warsaw, Poland"
+80,brianleroux (Brian LeRoux),3102,"San Francisco, USA || Vancouver, Canada"
+81,willdurand (William Durand),3094,Germany
+82,alexjlockwood (Alex Lockwood),3083,"San Francisco, CA"
+83,matsko (Matias Niemelä),3070,"San Francisco, California"
+84,stefanpenner (Stefan Penner),3068,"San Jose, CA"
+85,adamwathan (Adam Wathan),3064,"Ontario, Canada"
+86,Haacked (Phil Haack),3055,"Bellevue, WA"
+87,curran (Curran Kelleher),3054,Earth
+88,rauchg (Guillermo Rauch),3047,SF
+89,ianstormtaylor (Ian Storm Taylor),3042,"San Francisco, CA"
+90,KrauseFx (Felix Krause),3002,San Francisco
+91,tj (TJ Holowaychuk),2933,"Victoria, BC, Canada"
+92,jgm (John MacFarlane),2926,"Berkeley, CA"
+93,jverkoey (featherless),2922,"New York, NY"
+94,chenglou (Cheng Lou),2895,"Palo Alto, California"
+95,DataTables (Allan Jardine),2894,Scotland
+96,SamyPesse (Samy Pessé),2883,"Lyon, France"
+97,mjhea0 (Michael Herman),2856,Boulder
+98,0x00A (paolo fragomeni),2846,NYC
+99,tmcw (Tom MacWright),2821,"San Francisco, CA"
+100,brentvatne (Brent Vatne),2810,"Vancouver, Canada"
+101,carpedm20 (Taehoon Kim),2745,
+102,benjamn (Ben Newman),2743,New York City
+103,notwaldorf (Monica Dinculescu),2706,Sun Funcisco ☀️
+104,miyagawa (Tatsuhiko Miyagawa),2695,"San Francisco, CA"
+105,rnystrom (Ryan Nystrom),2690,"New York, NY"
+106,photonstorm (Richard Davey),2658,UK
+107,mattn (mattn),2656,"Osaka, Japan"
+108,dougwilson (Douglas Wilson),2655,
+109,JakeWharton (Jake Wharton),2654,"Pittsburgh, PA, USA"
+110,yyx990803 (Evan You),2645,New Jersey / China
+111,krzysztofzablocki (Krzysztof Zabłocki),2632,"Warsaw, Poland"
+112,eduardolundgren (Eduardo Lundgren),2629,California
+113,vjeux (Christopher Chedeau),2602,"San Francisco, California"
+114,mxcl (Max Howell),2586,"Savannah, GA"
+115,domenic (Domenic Denicola),2570,"New York, NY"
+116,alex (Alex Gaynor),2556,Washington D.C.
+117,mrdoob (Mr.doob),2555,
+118,josegonzalez (Jose Diaz-Gonzalez),2516,"New York, NY"
+119,fzaninotto (Francois Zaninotto),2507,"Nancy, France"
+120,pissang (Yi Shen),2472,"Shanghai, China"
+121,jamesmontemagno (James Montemagno),2427,"Seattle, WA"
+122,paulcbetts (Paul Betts),2414,San Francisco
+123,paulirish (Paul Irish),2412,Palo Alto
+124,samdark (Alexander Makarov),2403,Russia
+125,madskristensen (Mads Kristensen),2394,"Redmond, WA"
+126,sokra (Tobias Koppers),2391,Germany
+127,marijnh (Marijn Haverbeke),2378,Berlin
+128,alanhamlett (Alan Hamlett),2377,San Francisco
+129,wesm (Wes McKinney),2367,"New York, NY"
+130,josevalim (José Valim),2361,"Kraków, Poland"
+131,jennybc (Jennifer (Jenny) Bryan),2361,"Vancouver, BC, Canada"
+132,BurntSushi (Andrew Gallant),2348,"Marlborough, MA"
+133,zenorocha (Zeno Rocha),2341,California
+134,contra (contra),2333,"New York, NY"
+135,jaredhanson (Jared Hanson),2329,"Berkeley, CA"
+136,radar (Ryan Bigg),2315,"Melbourne, Australia"
+137,bevacqua (Nicolás Bevacqua),2310,https://twitter.com/nzgb
+138,xudafeng (xdf),2308,China
+139,j2kun (Jeremy Kun),2273,"San Francisco, CA"
+140,dominictarr (Dominic Tarr),2259,New Zealand
+141,avelino (Avelino),2234,"Roshamuul, Menera"
+142,vinta (Vinta),2213,"Taipei, Taiwan"
+143,developit (Jason Miller),2199,"Hamilton, Ontario, Canada"
+144,ashleygwilliams (ashley williams),2193,NYC
+145,ashfurrow (Ash Furrow),2192,New York
+146,f (Fatih Kadir Akın),2178,"Istanbul, Turkey"
+147,onevcat (Wei Wang),2166,"Kawasaki, Japan/Shanghai, China"
+148,toddmotto (Todd Motto),2153,"England, UK"
+149,gdi2290 (PatrickJS [tipe.io]),2153,"San Francisco, CA"
+150,EisenbergEffect (Rob Eisenberg),2151,
+151,ankane (Andrew Kane),2134,"San Francisco, CA"
+152,keijiro (Keijiro Takahashi),2128,Japan
+153,nolimits4web (Vladimir Kharlampidi),2127,"Rostov-on-Don, Russia"
+154,davidfowl (David Fowler),2123,"Bellevue, WA"
+155,biezhi (王爵nice),2113,"Shanghai, China"
+156,LeaVerou (Lea Verou),2110,"Boston, MA"
+157,davidtmiller (David Miller),2110,"Orlando, FL"
+158,odersky,2102,
+159,vhf (victor felder),2093,Switzerland
+160,soffes (Sam Soffes),2083,San Francisco
+161,mxstbr (Max Stoiber),2048,"Vienna, Austria"
+162,Jinjiang (勾三股四),2038,"Hangzhou, China"
+163,happypeter (Peter Wang),2023,微信：happypeter1983
+164,yeasy (Baohua Yang),2004,
+165,mafintosh (Mathias Buus),2001,"Copenhagen, Denmark"
+166,vczh (Zihan Chen),2001,"Seattle, WA, USA"
+167,Draveness (Draveness),1963,"Beijing, China"
+168,ded (Dustin Diaz),1963,California
+169,vladikoff (Vlad Filippov),1958,North America
+170,bnoordhuis (Ben Noordhuis),1954,The Netherlands
+171,jendewalt (Jen Dewalt),1953,United States
+172,jessfraz (Jess Frazelle),1952,PID 1
+173,indutny (Fedor Indutny),1946,USA
+174,olivergierke (Oliver Gierke),1936,"Dresden, Germany"
+175,i5ting (他们叫我狼叔),1929,china beijing
+176,laanwj (Wladimir J. van der Laan),1912,"Eindhoven, The Netherlands"
+177,drakeet (drakeet),1911,"Hangzhou, China"
+178,thejameskyle (James Kyle),1867,Sydney
+179,ahmetb (Ahmet Alp Balkan),1866,"Seattle, WA"
+180,sdiehl (Stephen Diehl),1865,"Boston, MA"
+181,jaywcjlove (小弟调调™),1859,"Shanghai, China"
+182,gitster (Junio C Hamano),1859,"Mountain View, CA"
+183,djspiewak (Daniel Spiewak),1858,"Boulder, CO"
+184,evilsocket (Simone Margaritelli),1846,"Rome, Italy"
+185,mariotaku (Mariotaku),1845,"Zhengzhou, Henan, China"
+186,shama (Kyle Robinson Young),1833,"Portland, OR"
+187,CamDavidsonPilon (Cameron Davidson-Pilon),1830,"Ottawa, Canada"
+188,dsyer (Dave Syer),1813,London
+189,winterbe (Benjamin Winterberg),1798,"Hanover, Germany"
+190,dennybritz (Denny Britz),1785,"Mountain View, CA"
+191,arun-gupta (Arun Gupta),1785,"San Jose, CA"
+192,maryrosecook (Mary Rose Cook),1776,"London, UK"
+193,killme2008 (dennis zhuang),1760,"HangZhou/SuZhou,China"
+194,IanLunn (Ian Lunn),1757,"Devon, UK"
+195,ruanyf (Ruan YiFeng),1755,"Shanghai, China"
+196,binux (Roy Binux),1745,"London, UK"
+197,nfultz (Neal Fultz),1731,"Los Angeles, CA"
+198,leah (Leah Culver),1728,"San Francisco, CA"
+199,suissa (Jean Carlo Nascimento),1726,Curitiba - PR
+200,anishathalye (Anish Athalye),1703,"Cambridge, MA"
+201,pkrumins (Peter Krumins),1698,SF Bay Area
+202,isaacs (isaacs),1698,Oakland CA
+203,staltz (André Staltz),1696,"Helsinki, Finland"
+204,KittenYang (Qitao Yang),1696,"Shanghai,China"
+205,leebyron (Lee Byron),1679,San Francisco
+206,fengmk2 (fengmk2),1665,"Hangzhou, China"
+207,passy (Pascal Hartig),1660,"London, UK"
+208,gorhill (Raymond Hill),1646,Canada / Québec
+209,phuslu (phuslu),1634,"Nanjing, China"
+210,mrmrs (Adam Morse),1620,London
+211,siddontang (siddontang),1615,China
+212,daylerees (Dayle Rees),1611,"Wales, UK"
+213,weavejester (James Reeves),1608,"London, UK"
+214,zce (汪磊),1602,"Beijing, China"
+215,philsturgeon (Phil Sturgeon),1578,"Brooklyn, NY"
+216,oldratlee (李鼎(哲良)),1571,"Hangzhou, Zhejiang, China"
+217,josephmisiti (Joseph Misiti),1564,"NYC, NY"
+218,atian25 (TZ | 天猪),1561,"GuangZhou, China"
+219,ebidel (Eric Bidelman),1548,"San Francisco, CA"
+220,overtrue (安正超),1547,"Shenzhen,China"
+221,connors (Connor Sears),1531,"Castro Valley, CA"
+222,eliben (Eli Bendersky),1530,California
+223,Seldaek (Jordi Boggiano),1514,"Zürich, Zurich, Switzerland"
+224,joyeecheung (Joyee Cheung),1507,
+225,bailicangdu (cangdu),1500,"Shanghai, China"
+226,nikic (Nikita Popov),1498,"Berlin, Germany"
+227,codahale (Coda Hale),1496,"Oakland, CA"
+228,amitshekhariitbhu (AMIT SHEKHAR),1495,"New Delhi, India"
+229,rakyll (JBD),1483,"San Francisco, CA"
+230,junyanz (Jun-Yan Zhu),1479,"Berkeley, CA"
+231,simurai (simurai),1478,"Sapporo, Japan"
+232,nicolasgramlich (Nicolas Gramlich),1459,"San Francisco, CA"
+233,shiffman (Daniel Shiffman),1455,"New York, NY"
+234,purcell (Steve Purcell),1441,"Wellington, New Zealand"
+235,evanphx (Evan Phoenix),1436,"Los Angeles, CA"
+236,ericelliott (Eric Elliott),1436,"San Francisco, California"
+237,matyhtf (Tianfeng),1434,China
+238,StephenGrider (Stephen Grider),1431,
+239,AdamBien (Adam Bien),1430,Planet Java
+240,rtomayko (Ryan Tomayko),1428,"Austin, TX"
+241,tomchristie (Tom Christie),1413,"Brighton, UK"
+242,be5invis (Belleve Invis),1402,"Beijing, China"
+243,amueller (Andreas Mueller),1393,NYC
+244,dead-horse (Yiyu He),1380,"Hangzhou, China"
+245,remy (Remy Sharp),1379,"Brighton, UK"
+246,Unknwon (无闻),1374,"Boston, MA"
+247,jiyinyiyong (Jon Chen),1373,"Shanghai, China"
+248,Shougo (Shougo),1371,Vim
+249,arunoda (Arunoda Susiripala),1369,"Colombo, Sri Lanka"
+250,benoitc (Benoit Chesneau),1364,"Creil, France"
+251,ask (Ask Solem),1363,"Palo Alto, CA"
+252,JohnSundell (John Sundell),1356,Poland / Norway / Sweden
+253,Raynos (Jake Verbaten),1334,San Francisco
+254,samuelclay (Samuel Clay),1332,San Francisco
+255,unicodeveloper (Prosper Otemuyiwa),1322,"Lagos, Nigeria"

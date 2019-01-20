@@ -1,0 +1,179 @@
+#Numbers
+17 / 3 #returns a float
+17 // 3 #returns an integer
+17 % 3 #modulo
+5 ** 2 #squared
+tax = 12.5 / 100 #assigns a variable
+
+#Strings
+"doesn't"
+print(r'C:\some\name') #raw strings avoid line jump
+prefix = 'Py'
+prefix + 'thon'#Returns Python
+word = 'Python'
+word[-2] #Second last character
+word[2:5] #Characters from 2 included to 5 excluded
+word[:2] #from the beggining to 2nd position excluded
+word[-2:] #from 2nd last included to end
+#Strings are immutable
+
+#Lists
+squares = [1, 4, 9, 16, 25]
+squares[-3:]
+squares[3] = 64 #Change value
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+letters[2:5] = [] #Remove letters
+len(letters)
+a = ['a', 'b', 'c']
+n = [1, 2, 3]
+x = [a, n] #nested lists
+
+#First step to programming
+a, b = 0, 1 #Fibonacci Series
+while a < 10:
+    print(a, end=',')
+    a, b = b, a+b
+
+#If, elif, else
+x = int(input("Please enter an integer: "))
+    if x < 0:
+        x = 0
+        print('Negative changed to zero')
+    elif x == 0:
+        print('Zero')
+    else print('More')
+
+#For Statements
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+    print(w, len(w))
+
+#Range function
+for i in range(5):
+    print(i)
+range(5, 10)
+
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+
+#Create list from iterables
+list(range(5))
+
+#Break Statement
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        # loop fell through without finding a factor
+        print(n, 'is a prime number')
+
+#Continue statement
+for num in range(2, 10):
+    if num % 2 == 0:
+        print("Found an even number", num)
+        continue
+    print("Found a number", num)
+
+#Pass Statement
+while True:
+    pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+
+#Defining a function
+def fib(n):    # write Fibonacci series up to n
+    """Print a Fibonacci series up to n."""
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+# Now call the function we just defined:
+fib(2000)
+
+def fib2(n):  # return Fibonacci series up to n
+    """Return a list containing the Fibonacci series up to n."""
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)    # see below
+        a, b = b, a+b
+    return result
+
+f100 = fib2(100)    # call it
+f100       # write the result
+
+#We can specify default arguments
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+
+#lambda expression
+def make_incrementor(n):
+    """Documentation"""
+    return lambda x: x + n
+
+#List commands :
+#list.append(x)
+#list.extend(iterable)
+#list.insert(i, x)
+#list.remove(x)
+#list.pop([i])
+#list.clear()
+#list.index(x[, start[, end]])
+#list.count(x)
+#list.sort(key=None, reverse=False)
+#list.reverse()
+#list.copy()
+
+#List comprehension
+squares = [x**2 for x in range(10)]
+
+#Delete an element of a list with del statement
+a = [-1, 1, 66.25, 333, 333, 1234.5]
+del a[0]
+a
+
+#Tuples
+t = 12345, 54321, 'hello!'
+t[0]
+
+#Sets
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+a = {x for x in 'abracadabra' if x not in 'abc'}
+a
+
+#Dictionnaries
+tel = {'jack': 4098, 'sape': 4139}
+tel['guido'] = 4127
+tel
+
+tel['jack']
+
+del tel['sape']
+tel['irv'] = 4127
+tel
+
+list(tel)
+
+sorted(tel)
+
+'guido' in tel
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for f in sorted(set(basket)):
+    print(f)

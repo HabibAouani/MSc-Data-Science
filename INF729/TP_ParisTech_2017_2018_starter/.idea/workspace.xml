@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="057d8a5e-8c3e-4201-b709-8af056eea904" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/Telecom_cours.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/Telecom_cours.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/R_User_Library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Gemfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/sparkProject/Trainer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/sparkProject/Trainer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/TP_ParisTech_2017_2018-assembly-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/TP_ParisTech_2017_2018-assembly-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/sparkProject/Trainer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/sparkProject/Trainer$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/assembly/$global/streams/assembly-inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/assembly/$global/streams/assembly-inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/assembly/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/assembly/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/assemblyOption/$global/streams/assembly/96c31501aa3ab7c03ce400ace74429bf12f84156_dir/com/sparkProject/Trainer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/assemblyOption/$global/streams/assembly/96c31501aa3ab7c03ce400ace74429bf12f84156_dir/com/sparkProject/Trainer$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SD701/Kaggle/.ipynb_checkpoints/SD701-TP03_Best_Model-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../SD701/Kaggle/.ipynb_checkpoints/SD701-TP03_Best_Model-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SD701/Kaggle/SD701-TP03_Best_Model.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../SD701/Kaggle/SD701-TP03_Best_Model.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_config.dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/authors.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/layout-comments/comment-1470944006665.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/layout-comments/comment-1470944162041.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/markup-syntax-highlighting/comment-1470969665387.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/welcome-to-jekyll/comment-1470942205700.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/welcome-to-jekyll/comment-1470942247755.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/welcome-to-jekyll/comment-1470942265819.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/comments/welcome-to-jekyll/comment-1470942493518.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/navigation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_data/ui-text.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_drafts/post-draft.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/analytics-providers/custom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/analytics-providers/google-universal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/analytics-providers/google.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/analytics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/archive-single-cv.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/archive-single-talk-cv.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/archive-single-talk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/archive-single.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/author-profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/base_path" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/breadcrumbs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/browser-upgrade.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/category-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/custom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/discourse.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/disqus.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/facebook.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/google-plus.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/scripts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments-providers/staticman.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/comments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/feature_row" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/footer/custom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/gallery" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/group-by-array" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/head/custom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/masthead.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/nav_list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/page__hero.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/page__taxonomy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/paginator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/post_pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/read-time.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/scripts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/seo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/social-share.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/tag-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_includes/toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/archive-taxonomy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/compress.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/default.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/single.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/splash.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_layouts/talk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/404.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/about.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/archive-layout-with-content.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/category-archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/collection-archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/cv.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/markdown.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/non-menu-page.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/page-archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/portfolio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/publications.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/sitemap.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/tag-archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/talkmap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/talks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/teaching.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/terms.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_pages/year-archive.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_portfolio/portfolio-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_portfolio/portfolio-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_posts/2012-08-14-blog-post-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_posts/2013-08-14-blog-post-2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_posts/2014-08-14-blog-post-3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_posts/2015-08-14-blog-post-4.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_posts/2199-01-01-future-post.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_publications/2009-10-01-paper-title-number-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_publications/2010-10-01-paper-title-number-2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_publications/2015-10-01-paper-title-number-3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_animations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_archive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_masthead.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_navigation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_notices.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_print.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_syntax.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_breakpoint.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_context.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_legacy-settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_no-query.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_parsers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_respond-to.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/_double.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/_query.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/_resolution.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/_single.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/_triple.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/double/_default-pair.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/double/_default.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/double/_double-string.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/resolution/_resolution.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/single/_default.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/breakpoint/parsers/triple/_default.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/font-awesome/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/magnific-popup/_magnific-popup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/magnific-popup/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/_su.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/_susy.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/_susyone.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/_su.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/_susy.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/_susyone.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_background.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_bleed.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_box-sizing.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_breakpoint-plugin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_context.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_gallery.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_grids.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_gutters.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_isolate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_margins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_padding.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_rows.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_span.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susy/_validation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_background.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_isolation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_margin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_media.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_padding.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/language/susyone/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/_float.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/_shared.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/_support.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/float/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/float/_end.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/float/_isolate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/float/_span.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_background.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_direction.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_inspect.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_margins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_output.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/shared/_padding.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/support/_background.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/support/_box-sizing.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/support/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/support/_prefix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/support/_rem.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/output/support/_support.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/su/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/su/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/su/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_sass/vendor/susy/susy/su/_validation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_talks/2012-03-01-talk-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_talks/2013-03-01-tutorial-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_talks/2014-02-01-talk-2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_talks/2014-03-01-talk-3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_teaching/2014-spring-teaching-1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_teaching/2015-spring-teaching-2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/css/academicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/css/academicons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/css/collapse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/css/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/academicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/academicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/academicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/academicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/_main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/main.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/plugins/jquery.fitvids.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/plugins/jquery.greedy-navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/plugins/jquery.magnific-popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/plugins/jquery.smooth-scroll.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/plugins/stickyfill.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assets/js/vendor/jquery/jquery-1.12.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data_zoe.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../files/paper1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../files/paper2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../files/paper3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/3953273590_704e3899d5_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/500x300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/bio-photo-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/bio-photo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/editing-talk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/foo-bar-identity-th.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/foo-bar-identity.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/image-alignment-1200x4002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/image-alignment-150x150.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/image-alignment-300x200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/image-alignment-580x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/mstile-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/mstile-310x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/mstile-310x310.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/mstile-70x70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/paragraph-indent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/paragraph-no-indent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/site-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/publications.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/publications.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/publications.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/talks.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/talks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../markdown_generator/talks.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/leaflet_dist/MarkerCluster.Default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/leaflet_dist/MarkerCluster.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/leaflet_dist/leaflet.markercluster-src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/leaflet_dist/leaflet.markercluster.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/leaflet_dist/screen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../talkmap/org-locations.js" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TP_ParisTech_2017_2018" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-17191826">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="scala" value="4865" />
+          <entry key="sh" value="3" />
+          <entry key="txt" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Bash" value="3" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Scala" value="4865" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="scala" value="3" />
+          <entry key="sh" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Bash" value="1" />
+          <entry key="CLASS" value="1" />
+          <entry key="Scala" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build_and_submit.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/sparkProject/Preprocessor.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#26#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/sparkProject/Trainer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="222" column="44" selection-start-line="222" selection-start-column="44" selection-end-line="222" selection-end-column="44" />
+              <folding>
+                <element signature="e#26#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/sparkProject/WordCount.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding>
+                <element signature="e#26#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/build_and_submit.sh" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/sparkProject/Preprocessor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/sparkProject/Trainer.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="479" />
+    <option name="y" value="23" />
+    <option name="width" value="961" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tp_paristech_2017_2018_starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP_ParisTech_2017_2018_starter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tp_paristech_2017_2018_starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP_ParisTech_2017_2018_starter" type="462c0819:PsiDirectoryNode" />
+              <item name="prepared_trainingset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tp_paristech_2017_2018_starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP_ParisTech_2017_2018_starter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tp_paristech_2017_2018_starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP_ParisTech_2017_2018_starter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tp_paristech_2017_2018_starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP_ParisTech_2017_2018_starter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tp_paristech_2017_2018_starter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP_ParisTech_2017_2018_starter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541236020726" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/scala/com/sparkProject" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="TP_ParisTech_2017_2018" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="tp_paristech_2017_2018_starter [file:/Users/maelfabien/TelecomParisTech/INF729/TP_ParisTech_2017_2018_starter/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="tp_paristech_2017_2018_starter-build [file:/Users/maelfabien/TelecomParisTech/INF729/TP_ParisTech_2017_2018_starter/]" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4547119592000" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="3184100689" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="924338670" />
+        <entry key="$PROJECT_DIR$/project/plugins.sbt" value="4157127457" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="057d8a5e-8c3e-4201-b709-8af056eea904" name="Default Changelist" comment="" />
+      <created>1538056329461</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538056329461</updated>
+    </task>
+    <task id="LOCAL-00001" summary="TP2-Spark">
+      <created>1538057683479</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538057683479</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="479" y="23" width="961" height="877" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.027203482" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" weight="0.32650602" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.43821657" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.32885906" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="sbt" order="8" visible="true" weight="0.3297062" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TP2-Spark" />
+    <option name="LAST_COMMIT_MESSAGE" value="TP2-Spark" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-mllib_2.11/jars/spark-mllib_2.11-2.3.1.jar!/org/apache/spark/ml/tuning/TrainValidationSplitModel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build_and_submit.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/sparkProject/Preprocessor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#26#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/sparkProject/WordCount.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#26#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/sparkProject/Trainer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="222" column="44" selection-start-line="222" selection-start-column="44" selection-end-line="222" selection-end-column="44" />
+          <folding>
+            <element signature="e#26#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TP_ParisTech_2017_2018</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>sbt: aopalliance:aopalliance:1.0:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
