@@ -1,0 +1,48 @@
+<TITLE> UCSD Garch Toolbox </TITLE>
+<BODY> 
+<A HREF = "../html/view.html" target="FRP">[Return to Master Index]</A>
+</BR> 
+</BR> 
+<pre> 
+-------- Garch Estimation functions -------- 
+</pre> 
+<pre> 
+%   
+<A HREF = "armaxfilter.m              ">armaxfilter                </A>: Function designed to provide a good ARMAX time series filter
+<A HREF = "armaxfilter_likelihood.m   ">armaxfilter_likelihood     </A>: [LLF] = armaxfilter_likelihood(parameters , regressand , regressors, ar , ma)
+<A HREF = "berkowitz.m                ">berkowitz                  </A>: Performs a Kolmogorov-Smirnov test using the Berkowitz transform to a univariate normal
+<A HREF = "egarch.m                   ">egarch                     </A>: E_GARCH(P,Q) parameter estimation with different error distributions, the Normal, The T, 
+<A HREF = "egarchlikelihood.m         ">egarchlikelihood           </A>: EGARCHLIKELIHOOD(P,Q) likelihood function.  Helper function to EGARCH
+<A HREF = "exppowcdf.m                ">exppowcdf                  </A>: Evaluates the Probabiliy a vector of observations x(Nx1)
+<A HREF = "exppowpdf.m                ">exppowpdf                  </A>:  Evaluates the Probabiliy a vector of observations x(Nx1)
+<A HREF = "exppowrnd.m                ">exppowrnd                  </A>: Generates Deviates from the Exponential Power Distribution
+<A HREF = "fattailed_garch.m          ">fattailed_garch            </A>: FATTAILED_GARCH(P,Q) parameter estimation with different error distributions, the NOrmal, The T, 
+<A HREF = "fattailed_garchlikelihood.m">fattailed_garchlikelihood  </A>: likelihood for fattailed garch
+<A HREF = "fattailed_garchsimulate.m  ">fattailed_garchsimulate    </A>: FATTAILED_GARCH(P,Q) time series simulation
+<A HREF = "garchcore.m                ">garchcore                  </A>: Helper function part of UCSD_GARCH toolbox. Used if you do not use the MEX file.
+<A HREF = "garchlikelihood.m          ">garchlikelihood            </A>: [LLF, grad, hessian, h, scores, robustse] = garchlikelihood(parameters , data , p , q)
+<A HREF = "garchpq.m                  ">garchpq                    </A>: GARCH(P,Q) parameter estimation with normal innovations using analytic derivatives
+<A HREF = "garchsimulate.m            ">garchsimulate              </A>: GARCH(P,Q) time series simulation
+<A HREF = "gedcdf.m                   ">gedcdf                     </A>: Evaluates the Probabiliy a vector of observations x(Nx1)
+<A HREF = "gedpdf.m                   ">gedpdf                     </A>: Evaluates the Probabiliy a vector of observations x(Nx1)
+<A HREF = "gedrnd.m                   ">gedrnd                     </A>: Generates Deviates from the Generalized Error Distribution 
+<A HREF = "jarquebera.m               ">jarquebera                 </A>: Performs a Jarque-Bera test for normality.  Uses the skewness and kurtosis to determine if a
+<A HREF = "kolmogorov.m               ">kolmogorov                 </A>: Performs a Kolmogorov-Smirnov test that the data are from a specified distribution
+<A HREF = "kscritical.m               ">kscritical                 </A>: This is a helper function for kolmorgorov that returns the appropriate critical value.
+<A HREF = "lagmatrix.m                ">lagmatrix                  </A>: Construct an X matrix and a Y vector for use in an AR regression
+<A HREF = "lilliefors.m               ">lilliefors                 </A>: Perofmrs a lilliefors test for normality then the mean and variance are unknown 
+<A HREF = "ljq2.m                     ">ljq2                       </A>: Helper function for looking at the squared redisuals of a garch process
+<A HREF = "lmtest1.m                  ">lmtest1                    </A>: Performs an LM test for the presense of autocorrelation in q lags
+<A HREF = "lmtest2.m                  ">lmtest2                    </A>: Performs an Engle LM test of the squarred residuals regressed on q lags
+<A HREF = "multi_garch_constraints.m  ">multi_garch_constraints    </A>: constraints for multigarch
+<A HREF = "multi_garch_paramsetup.m   ">multi_garch_paramsetup     </A>: multigraph parameter parsing
+<A HREF = "multigarch.m               ">multigarch                 </A>: This is a multiuse univariate GARCH function which can estimate 
+<A HREF = "multigarch_likelihood.m    ">multigarch_likelihood      </A>: multigarch likelihood
+<A HREF = "shapirofrancia.m           ">shapirofrancia             </A>: This function performs that Shapiro-Francia Test for normality of the data
+<A HREF = "shapirowilks.m             ">shapirowilks               </A>: This function performs that Shapiro-Wilks Test for normality of the data
+<A HREF = "stdtdis_cdf.m              ">stdtdis_cdf                </A>: returns cdf at x of the standardized to unit variance t(n) distribution
+<A HREF = "stdtdis_pdf.m              ">stdtdis_pdf                </A>: returns the pdf at x of the standardized t(n) distribution
+<A HREF = "stdtdis_rnd.m              ">stdtdis_rnd                </A>: returns random draws from the standardized t(n) distribution with unit variance
+<A HREF = "ucsd_garch_demo.m          ">ucsd_garch_demo            </A>n []=ucsd_garch_demo();
+</pre> 
+</BODY> 

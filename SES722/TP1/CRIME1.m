@@ -26,8 +26,10 @@ X=[ones(n,1),WAGE1(:,[2,3,4])]
 % Residuals
 beta=inv(X'*X)*X'*y
 u=y-X*beta
+
 sig2=u'*u/(n-4)
 std=sqrt(diag(sig2*inv(X'*X)))
+
 hist(u)
 % Log of salary
 X=([ones(n,1),log(WAGE1(:,[2,3,4]))])
