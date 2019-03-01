@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
 
-
 def variable_summaries(var, name):
     with tf.name_scope('summaries'):
         mean = tf.reduce_mean(var)
