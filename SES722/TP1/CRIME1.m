@@ -37,6 +37,7 @@ X(isinf(X)|isnan(X)) = 0;
 beta=inv(X'*X)*X'*y
 u=y-X*beta
 hist(u)
+
 % Remove outliers
 indices = find(u>2.5);
 u(indices) = [];
