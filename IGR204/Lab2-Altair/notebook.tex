@@ -1,0 +1,1149 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Lab 2 - Altair}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Lab 2 --- Altair}\label{lab-2-altair}
+
+In last week's lab, we used Tableau to create a dashboard from places in
+France. Tableau is a great tool, but it has two primary limitations: 1)
+while Tableau is quite powerful---and we've only scratched the surface
+of what it can do---sometimes you need to do more. 2) A lot of
+statistical data work is done programmatically rather than through a
+drag-n-drop interface.
+
+This week, we will continue to work with the Places-in-France dataset.
+This time, we will use \href{https://altair-viz.github.io}{Altair}, a
+Python library for creating statistical visualizations.
+
+The goals of this lab are:
+
+\begin{itemize}
+\tightlist
+\item
+  Get a better understanding of grammar of statistical visualisations:
+  spaces, mappings, marks, and encodings,
+\item
+  Give you a sense of a complementary, programmatic way of creating an
+  interactive visualisation,
+\item
+  Understand the declarative way of thinking used by Altair, Vega-Lite,
+  and D3.
+\end{itemize}
+
+With that in mind, let's get started.
+
+\subsection{Loading data}\label{loading-data}
+
+\href{https://perso.telecom-paristech.fr/eagan/class/igr204/data/france.csv}{Download
+our Places-in-France dataset} and place it in the same folder as this
+notebook.
+
+We'll now need to import it into our project. Altair can manage multiple
+data formats. In our case, we'll use a version of last week's data
+converted into CSV format. (It can also handle TSV, JSON, and Pandas
+Dataframes.)
+
+In our case, we're going to just use the name of our CSV file. You could
+also use a URL or a full path.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} Import the Altair library}
+        \PY{c+c1}{\PYZsh{} by convention, we use alt to save typing, but you can just \PYZsq{}import altair\PYZsq{} if you wish}
+        \PY{k+kn}{import} \PY{n+nn}{altair} \PY{k}{as} \PY{n+nn}{alt} 
+        
+        \PY{c+c1}{\PYZsh{} Reference to data}
+        \PY{n}{france} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{france.csv}\PY{l+s+s1}{\PYZsq{}}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/anaconda3/lib/python3.6/site-packages/requests/\_\_init\_\_.py:80: RequestsDependencyWarning: urllib3 (1.21.1) or chardet (2.3.0) doesn't match a supported version!
+  RequestsDependencyWarning)
+
+    \end{Verbatim}
+
+    \subsection{Making a basic chart}\label{making-a-basic-chart}
+
+Recall that our data set has columns \texttt{Postal\ Code}, \texttt{x},
+\texttt{y}, \texttt{inseecode}, \texttt{place}, \texttt{population}, and
+\texttt{density}. Let's make a map that plots the \texttt{x} vs
+\texttt{y} columns as points.
+
+In the code below, we'll make a \texttt{Chart} from the \texttt{france}
+data using \texttt{point} marks. We'll bind (or \emph{encode} the
+chart's \texttt{x=} axis to the \texttt{x} attribute of our data set
+(and similarly for \texttt{y}). In both cases, we tell Altair that the
+data are \texttt{Q}uantitative with \texttt{:Q}. (There's also
+\texttt{:N} for nominal/categorical data, \texttt{:O} for ordinal, and
+\texttt{:T} for temporal data.)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+            \PY{n}{x}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}
+        \PY{p}{)}
+        
+        \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}3}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_3_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    That looks nice, but notice that Altair shows the origin (0, 0) by
+default. That's usually what you want, but not in this case. Let's tell
+Altair to hide the axes and the origin.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{}\PYZsh{} Hmm, looks nice, but let\PYZsq{}s change the default scales.}
+        \PY{c+c1}{\PYZsh{}\PYZsh{} Need to change from shorthand notation.}
+        
+        \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+            \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+            \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}
+        \PY{p}{)}
+        
+        \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}4}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_5_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    In the previous map, we had used Altair's shorthand syntax to specify
+the data bindings. That works for the common case, but here we need more
+control, so we have to use an explicit object for the \texttt{x} and
+\texttt{y} dimensions: \texttt{alt.X(...)} and \texttt{alt.Y(...)}. We
+also need to create a \texttt{Scale} to set its \texttt{zero=False}.
+
+This new chart looks much better, but we really can't see much detail
+here. Let's reduce the default mark \texttt{size} to \texttt{1}. We're
+also going to adjust the chart \texttt{properties} to set the width and
+height to something bigger.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{}\PYZsh{} Much better, but we really can\PYZsq{}t see much here.  Let\PYZsq{}s make the point sizes smaller and make the canvas bigger}
+        
+        \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+            \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+            \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}
+        \PY{p}{)}\PY{o}{.}\PY{n}{properties}\PY{p}{(}
+            \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,}
+            \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}
+        \PY{p}{)}
+        
+        \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}7}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    In Altair, a chart is made up of three primary things:
+
+\begin{itemize}
+\tightlist
+\item
+  Marks --- the kinds of shapes to draw
+\item
+  Encodings --- a mapping from data to attributes of the marks
+\item
+  Properties --- meta-data about the chart
+\end{itemize}
+
+Now that we've seen each of them, let's talk a little more about each.
+
+\subsubsection{Marks}\label{marks}
+
+\emph{Marks} are the kinds of shapes that we want to draw. Here is a
+summary of the kinds of marks in Altair, taken from the
+\href{https://altair-viz.github.io/user_guide/marks.html}{Altair
+documentation}.
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Mark Name & Method & Description\tabularnewline
+\midrule
+\endhead
+area & \texttt{mark\_area()} & A filled area plot.\tabularnewline
+bar & \texttt{mark\_bar()} & A bar plot.\tabularnewline
+circle & \texttt{mark\_circle()} & A scatter plot with filled
+circles.\tabularnewline
+geoshape & \texttt{mark\_geoshape()} & A geographic shape\tabularnewline
+line & \texttt{mark\_line()} & A line plot.\tabularnewline
+point & \texttt{mark\_point()} & A scatter plot with configurable point
+shapes.\tabularnewline
+rect & \texttt{mark\_rect()} & A filled rectangle, used for
+heatmaps\tabularnewline
+rule & \texttt{mark\_rule()} & A vertical or horizontal line spanning
+the axis.\tabularnewline
+square & \texttt{mark\_square()} & A scatter plot with filled
+squares.\tabularnewline
+text & \texttt{mark\_text()} & A scatter plot with points represented by
+text.\tabularnewline
+tick & \texttt{mark\_tick()} & A vertical or horizontal tick
+mark.\tabularnewline
+\bottomrule
+\end{longtable}
+
+The basic idea is that each data point will get mapped into one of these
+types of marks.
+
+\subsubsection{Encodings}\label{encodings}
+
+Encodings determine the binding between the data point and the mark. In
+our example, we've been encoding the \texttt{x} and \texttt{y} data
+columns to each mark's \texttt{x}- and \texttt{y}-position. As you can
+see in the
+\href{https://altair-viz.github.io/user_guide/encoding.html\#encoding-channels}{Altair
+documentation}, there are positional encodings, mark property encodings
+(as we'll see in the next step), and interaction encodings (as we'll see
+later for with tooltips).
+
+Let's go ahead and bind the size of the places to their population in
+our data set. In other words, we're going to \emph{encode} the
+\texttt{population} data attribute by the \emph{size} of each
+\emph{mark}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+            \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+            \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+            
+            \PY{c+c1}{\PYZsh{} NEW: bind population to size}
+            \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            
+            \PY{c+c1}{\PYZsh{} Or, try this alternate binding that clamps the range to [1, 400] instead of the default, [0, 400].}
+            \PY{c+c1}{\PYZsh{} size=alt.Size(\PYZsq{}population:Q\PYZsq{}, scale=alt.Scale(range=[1, 400])),}
+            
+        \PY{p}{)}\PY{o}{.}\PY{n}{properties}\PY{p}{(}
+            \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,}
+            \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}
+        \PY{p}{)}
+        
+        \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}8}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_9_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    That looks great! We can already start to see some interesting emergent
+features from our data, such as the effect of rivers, mountains, and
+other influences.
+
+Notice the alternative solution in the above code. Go ahead and try the
+other solution. Do you see a difference in the output? What do you think
+is going on?
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+So far, we have bindings for \texttt{x}, \texttt{y}, and
+\texttt{population}. In the code below, go ahead and bind
+\texttt{density} to each place's color. \emph{Hint}: you declare a color
+encoding with \texttt{color=}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{c+c1}{\PYZsh{}\PYZsh{} How would we adapt this to encode density by color?}
+         \PY{c+c1}{\PYZsh{}\PYZsh{} Hint: you declare a color encoding with color=}
+         
+         \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+             \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+         
+             \PY{c+c1}{\PYZsh{} \PYZgt{}\PYZgt{}\PYZgt{} your code here \PYZlt{}\PYZlt{}\PYZlt{}}
+             \PY{c+c1}{\PYZsh{}color=\PYZsq{}density:Q\PYZsq{}}
+             \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}, type=\PYZsq{}linear\PYZsq{}}
+         
+         \PY{p}{)}\PY{o}{.}\PY{n}{properties}\PY{p}{(}
+             \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,}
+             \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}
+         \PY{p}{)}
+         
+         \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}48}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_11_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Altair}\label{altair}
+
+So far, we've just gotten started with Altair. Before we dig a little
+deeper, let's take a closer look at the shorthand notation and the
+classes used in Altair.
+
+By default, Altair tries to use reasonable defaults. If you're just
+exploring data, they're often good enough. That will let you create
+basic charts just by binding, say, \texttt{x} and/or \texttt{y} to some
+column in your data table, e.g.
+\texttt{x=\textquotesingle{}population:Q\textquotesingle{},\ y=\textquotesingle{}density:Q\textquotesingle{}}.
+
+But if we need to override the defaults, we need to use a more
+complicated syntax. Each of the encodings defines a configurable class.
+Instead of using a shorthand string, as we did above, we can pass in an
+instance of that class. That's what we did in the first step when we
+switched from using
+
+\begin{verbatim}
+x='x:Q',
+\end{verbatim}
+
+to
+
+\begin{verbatim}
+x=alt.X('x:Q', axis=None)
+\end{verbatim}
+
+How did we know we could control the axis through the \texttt{axis=}
+keyword? The
+\href{https://altair-viz.github.io/user_guide/encoding.html\#encoding-channels}{Altair
+documentation} lists the different encoding classes available. A click
+on the \texttt{X} class on that page will take you to the documentation
+that enumerates the different parameters you can override from their
+default values. Notice that the third attribute down shows:
+
+\begin{verbatim}
+axis:anyOf(Axis, None)
+\end{verbatim}
+
+Thus, we can either pass in an instance of the Altair \texttt{Axis}
+class or the value \texttt{None}---in which case, the documentation
+explains, that axis will be removed from the chart.
+
+\subsection{Compared to other
+approaches}\label{compared-to-other-approaches}
+
+Some of you may have heard of or even used other libraries for creating
+statistical visualisations, including matplotlib, ggplot, Seaborn, and
+others. Each of these libraries has a healthy community behind them and
+are perfectly reasonable choices to use, and most of them will use
+similar concepts to what we are seeing here with Altair.
+
+In this class, however, he use Altair for several reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  It has a nice mapping of Bertin's and Wilkinsin's concepts for
+  statistical visualisation (that we saw in class earlier today!) baked
+  into their APIs,
+\item
+  It uses a declarative rather than procedural design approach,
+\item
+  You can easily export your visualisations to PNG, SVG, or even
+  interactive web pages, and
+\item
+  It generates Vega-Lite descriptions that are then rendered using D3,
+  which we'll see later on in the semester.
+\end{itemize}
+
+That second point probably needs a little more explanation. In a
+procedural syntax, you could imagine saying something like:
+
+\begin{verbatim}
+for each data point:
+    draw circle of size datum.population at datum.x, datum.y
+\end{verbatim}
+
+in our declarative approach, we'd say instead:
+
+\begin{verbatim}
+make a chart for data where:
+    position is (datum.x, datum.y) and size is datum.population
+\end{verbatim}
+
+At first glance, those might look awfully similar, but the key
+difference is that, in the first case, we say \emph{how} to do what we
+want, whereas in the second case, we simply say \emph{what} we want.
+
+Altair, D3, and Vega all use this second, declarative approach. It takes
+some getting used to, but it is part of what makes these libraries
+compelling.
+
+    \subsection{Tooltips}\label{tooltips}
+
+So far, our visualisations are not particularly interactive. Let's go
+ahead and change that.
+
+The barest, most minimal interaction we can add is to show a tooltip
+when we hover over a place. In Altair, we can use the
+\href{https://altair-viz.github.io/user_guide/generated/channels/altair.Tooltip.html}{Tooltip}
+encoding.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}76}]:} \PY{c+c1}{\PYZsh{} Let\PYZsq{}s add tooltips}
+         
+         \PY{n+nb}{map} \PY{o}{=} \PY{n+nb}{map}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{tooltip}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{place:N}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+             \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}, type=\PYZsq{}linear\PYZsq{}}
+         \PY{p}{)}
+         
+         \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}76}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_14_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Multiple views}\label{multiple-views}
+
+It would be nice to see a different representationof the distribution of
+population and densities in France. Let's go ahead and add in a
+``histogram'' of population and density\ldots{}.
+
+A histogram is just a bar chart of the different bins of values, so
+let's create a chart using \emph{bars} for the \emph{marks}. We want to
+show the population on the \emph{x} axis and the number of people in
+that bin on the \emph{y} axis:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}77}]:} \PY{n}{population} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count(population):Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+         \PY{p}{)}
+         
+         \PY{n}{population}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}77}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_16_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    That's close, but we're not really binning our data. Let's go ahead and
+create slices (or bins) of the data on the \emph{x} axis. (In French,
+we'd call these \emph{tranches}.)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}78}]:} \PY{n}{population} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count(population):Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+         \PY{p}{)}
+         
+         \PY{n}{population}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}78}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_18_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    That's better, but the default bins are a bit too big. Let's override
+the number of bins. Also, let's show the number of people in each bin
+instead of the number of places by replacing the \texttt{count()} with
+the \texttt{sum()}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}79}]:} \PY{n}{population} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sum(population):Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+         \PY{p}{)}
+         
+         \PY{n}{population}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}79}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_20_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsubsection{Density histogram}\label{density-histogram}
+
+How would you make a histogram of the densities? Try changing the code
+below do make it into a \emph{density} histogram instead of showing the
+population.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}80}]:} \PY{n}{density} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sum(density):Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+         \PY{p}{)}
+         
+         \PY{n}{density}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}80}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_22_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \section{Making a multi-view visualisation (e.g.,
+``dashboard'')}\label{making-a-multi-view-visualisation-e.g.-dashboard}
+
+We now have all of the pieces we need to make a multi-view visualisation
+(what we called a ``dashboard'' in Tableau).
+
+In Altair, you can combine multiple charts manually using the
+\texttt{\&} and \texttt{\textbar{}} operators to combine them
+\emph{vertically} or \emph{horizontally}, respectively.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}81}]:} \PY{n}{population} \PY{o}{\PYZam{}} \PY{n}{density} \PY{o}{\PYZam{}} \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}81}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_24_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Other interactions}\label{other-interactions}
+
+Beyond tooltips, we want to be able to \emph{select} data points,
+\emph{filter} out data, and to be able to \emph{link views} so that,
+say, a selection in one might filter what is shown in another (or alter
+its presentation in some other way).
+
+Let's start with selections. There are three kinds of selections:
+
+\begin{itemize}
+\tightlist
+\item
+  intervals --- a range of values
+\item
+  single - a single value
+\item
+  multi - multiple values
+\end{itemize}
+
+Intervals let the user ``brush'' over a range of values to select them.
+Single selection select a single data point, while multi selections let
+the use combine single selections (by default with the shift key).
+\href{https://altair-viz.github.io/user_guide/interactions.html}{For
+more info, see the Altair selections guide}
+
+Here, let's add a rectangular selection brush to our map.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}82}]:} \PY{n}{brush} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{selection\PYZus{}interval}\PY{p}{(}\PY{p}{)}
+         \PY{n+nb}{map}\PY{o}{.}\PY{n}{add\PYZus{}selection}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}82}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_26_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    Now try it out. Try dragging a box around a part of the map.
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+Huh, that sort of works. We see a selection appear, but it doesn't
+\emph{do} anything with it. Let's fix that.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}86}]:} \PY{c+c1}{\PYZsh{} Let\PYZsq{}s gray out unselected places}
+         
+         \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+             \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+             \PY{n}{tooltip}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{place:N}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+             \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{condition}\PY{p}{(}\PY{n}{brush}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alt}\PY{o}{.}\PY{n}{value}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lightgrey}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+         \PY{p}{)}\PY{o}{.}\PY{n}{add\PYZus{}selection}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+         
+         \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}86}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_28_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    Well, that seems to work. It's a little slow (because we have a
+\emph{lot} of \emph{large} views open in this notebook), but moreover,
+it doesn't really \emph{do} much useful.
+
+Let's go ahead and link our selection to the histogram. Notice that all
+we need to do to filter the histogram based on the selection is to add a
+\texttt{.transform\_filter()} to the histogram that uses the map's
+selection \texttt{brush}. (See the last line of the histogram.)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}85}]:} \PY{n}{population} \PY{o}{=} \PY{n}{population} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sum(population):Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+         \PY{p}{)}\PY{o}{.}\PY{n}{transform\PYZus{}filter}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+         
+         \PY{n}{population} \PY{o}{\PYZam{}} \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}85}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_30_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    That's great, but it would be nice if we could link the views both ways:
+a selection in the map updates the histogram or a selection in the
+histogram updates the map.
+
+To do that, we'll create two selections:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{brush} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{selection\PYZus{}interval}\PY{p}{(}\PY{p}{)}
+         \PY{n}{pop\PYZus{}selection} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{selection\PYZus{}interval}\PY{p}{(}\PY{n}{encodings}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    Notice that the new selection uses an optional \texttt{encodings}
+parameter to indicate that it only selects data items along the
+\texttt{x} encoding from the chart (which we have mapped to the
+\texttt{x} data attribute).
+
+Now update the code below to link the two charts using the new brush.
+(This code will show an error if you haven't linked things in
+correctly.)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}101}]:} \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{condition}\PY{p}{(}\PY{n}{pop\PYZus{}selection}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alt}\PY{o}{.}\PY{n}{value}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lightgrey}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+          \PY{p}{)}\PY{o}{.}\PY{n}{add\PYZus{}selection}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+          
+          \PY{n}{population} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{250}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sum(population):Q}\PY{l+s+s1}{\PYZsq{}}
+          \PY{p}{)}\PY{o}{.}\PY{n}{add\PYZus{}selection}\PY{p}{(}\PY{n}{pop\PYZus{}selection}\PY{p}{)}\PY{o}{.}\PY{n}{transform\PYZus{}filter}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+          
+          \PY{n}{population} \PY{o}{\PYZam{}} \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}101}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_34_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Exercises}\label{exercises}
+
+\begin{itemize}
+\tightlist
+\item
+  Add linked selection to density ``histogram''
+\item
+  Try different encodings: explore
+  \href{https://altair-viz.github.io/user_guide/generated/core/altair.Scale.html\#altair.Scale}{alt.Scale},
+  \href{https://altair-viz.github.io/user_guide/generated/channels/altair.Color.html\#altair.Color}{alt.Color},
+  etc.
+\item
+  Try different marks: mark\_rect, mark\_tick, mark\_circle, \ldots{}.
+  \href{https://altair-viz.github.io/user_guide/marks.html}{Marks
+  documentation}
+\item
+  Try making a heatmap of places in France.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} Add linked selection to density “histogram”}
+        
+        \PY{n}{brush} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{selection\PYZus{}interval}\PY{p}{(}\PY{p}{)}
+        \PY{n}{dens\PYZus{}selection} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{selection\PYZus{}interval}\PY{p}{(}\PY{n}{encodings}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        
+        \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+            \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+            \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+            \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{n}{tooltip}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{place:N}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+            \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{condition}\PY{p}{(}\PY{n}{dens\PYZus{}selection}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alt}\PY{o}{.}\PY{n}{value}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lightgrey}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+        \PY{p}{)}\PY{o}{.}\PY{n}{add\PYZus{}selection}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+        
+        \PY{n}{density} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}bar}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+            \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{250}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+            \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sum(density):Q}\PY{l+s+s1}{\PYZsq{}}
+        \PY{p}{)}\PY{o}{.}\PY{n}{add\PYZus{}selection}\PY{p}{(}\PY{n}{dens\PYZus{}selection}\PY{p}{)}\PY{o}{.}\PY{n}{transform\PYZus{}filter}\PY{p}{(}\PY{n}{brush}\PY{p}{)}
+        
+        \PY{n}{density} \PY{o}{\PYZam{}} \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}3}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_36_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}130}]:} \PY{c+c1}{\PYZsh{} Try different encodings: explore alt.Scale, alt.Color, etc.}
+          
+          \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}point}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+              \PY{n}{tooltip}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{place:N}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n+nb}{type}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pow}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+          \PY{p}{)}
+          
+          \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}130}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_37_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}99}]:} \PY{c+c1}{\PYZsh{} Try different marks: mark\PYZus{}rect, mark\PYZus{}tick, mark\PYZus{}circle, …. Marks documentation}
+         
+         \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}circle}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+             \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}\PY{p}{,}
+             \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+             \PY{n}{size}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+             \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{domain}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{p}{)}
+         
+         \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}99}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_38_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}133}]:} \PY{n}{proj} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{orthographic}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n+nb}{map}\PY{o}{.}\PY{n}{project}\PY{p}{(}\PY{n}{proj}\PY{p}{)}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}133}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_39_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}198}]:} \PY{c+c1}{\PYZsh{} Free Exploration}
+          
+          \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}circle}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{500}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{aggregate}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{oranges}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+          \PY{p}{)}
+          
+          \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}198}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_40_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{Bonus exercises}\label{bonus-exercises}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}190}]:} \PY{c+c1}{\PYZsh{} Try making a heatmap of places in France}
+          
+          \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}square}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{aggregate}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{viridis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+          \PY{p}{)}
+          
+          \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}190}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_42_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}201}]:} \PY{c+c1}{\PYZsh{} Or a heatmap of population densities in France}
+          
+          \PY{n+nb}{map} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{800}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}square}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{aggregate}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{oranges}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+          \PY{p}{)}
+          
+          \PY{n+nb}{map}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}201}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_43_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}210}]:} \PY{n}{map1} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}square}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{population:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{aggregate}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{oranges}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+          \PY{p}{)}
+          
+          \PY{n}{map2} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{Chart}\PY{p}{(}\PY{n}{france}\PY{p}{,} \PY{n}{width}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{,} \PY{n}{height}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}\PY{o}{.}\PY{n}{mark\PYZus{}square}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{o}{.}\PY{n}{encode}\PY{p}{(}
+              \PY{n}{x}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{X}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{y}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Y}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{zero}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}\PY{p}{,} \PY{n+nb}{bin}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Bin}\PY{p}{(}\PY{n}{maxbins}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+              \PY{n}{color}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Color}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density:Q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{aggregate}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{scale}\PY{o}{=}\PY{n}{alt}\PY{o}{.}\PY{n}{Scale}\PY{p}{(}\PY{n}{scheme}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{oranges}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+          \PY{p}{)}
+          
+          \PY{n}{chart} \PY{o}{=} \PY{n}{alt}\PY{o}{.}\PY{n}{hconcat}\PY{p}{(}\PY{p}{)}
+          \PY{k}{for} \PY{n}{origin} \PY{o+ow}{in} \PY{p}{[}\PY{n}{map1}\PY{p}{,} \PY{n}{map2}\PY{p}{]}\PY{p}{:}
+              \PY{n}{chart} \PY{o}{|}\PY{o}{=} \PY{n}{origin}
+          \PY{n}{chart}
+\end{Verbatim}
+
+\texttt{\color{outcolor}Out[{\color{outcolor}210}]:}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_44_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
