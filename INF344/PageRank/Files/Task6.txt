@@ -1,0 +1,17 @@
+(This question is more open-ended than the previous ones and thus will not use auto-evaluation.)
+
+To fill in the remarks you are encouraged to run it locally on big dumps examples such as 
+https://dumps.wikimedia.org/lbwiki/latest/lbwiki-latest-pages-articles-multistream.xml.bz2 (or a smaller wikipedia)
+
+#General remarks:
+
+This kind of approach has 1 major advantage :
+Instead of requiring several iterations of Map and Reduce steps, we can do the Map and then the Reduce sequentially. This means that we can approach the right answer by parallelizing the work of many random surfers.
+
+#Comparison with Task 5 results:
+
+Random surfers only approach the right answer by simulation, meaning that the more iterations we allow them to do, the closer to the right answer they are. 
+
+A single random surfer appears to be quite longer to run than the previous questions, but most likely faster than in question 5. 
+
+In terms of memory, a random surfer only stores a number associated to a single link, so it appears to be more efficient.

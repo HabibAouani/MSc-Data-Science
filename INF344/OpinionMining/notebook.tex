@@ -1,0 +1,1097 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Opinion}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{TP : Analyse des opinions sous
+twitter}\label{tp-analyse-des-opinions-sous-twitter}
+
+Maël Fabien
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}451}]:} \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{} General import}
+          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+          \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+          \PY{k+kn}{import} \PY{n+nn}{os}
+          \PY{k+kn}{import} \PY{n+nn}{re}
+          \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{accuracy\PYZus{}score}
+          
+          \PY{c+c1}{\PYZsh{}\PYZsh{}\PYZsh{} NLTK}
+          \PY{k+kn}{from} \PY{n+nn}{nltk}\PY{n+nn}{.}\PY{n+nn}{corpus} \PY{k}{import} \PY{n}{sentiwordnet} \PY{k}{as} \PY{n}{swn}
+          \PY{k+kn}{from} \PY{n+nn}{nltk}\PY{n+nn}{.}\PY{n+nn}{corpus} \PY{k}{import} \PY{n}{wordnet} \PY{k}{as} \PY{n}{wn}
+          \PY{k+kn}{import} \PY{n+nn}{nltk} \PY{k}{as} \PY{n+nn}{nltk}
+          \PY{k+kn}{from} \PY{n+nn}{nltk}\PY{n+nn}{.}\PY{n+nn}{tokenize}\PY{n+nn}{.}\PY{n+nn}{casual} \PY{k}{import} \PY{n}{TweetTokenizer}
+          
+          \PY{n}{nltk}\PY{o}{.}\PY{n}{download}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sentiwordnet}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[nltk\_data] Downloading package sentiwordnet to
+[nltk\_data]     /Users/maelfabien/nltk\_data{\ldots}
+[nltk\_data]   Package sentiwordnet is already up-to-date!
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}451}]:} True
+\end{Verbatim}
+            
+    \subsection{I. Importer les fichiers}\label{i.-importer-les-fichiers}
+
+    Les tweets à analyser sont disponibles à l'adresse suivante :
+https://clavel.wp.imt.fr/files/
+2018/05/testdata.manual.2009.06.14.csv\_.zip. Cette base (Sentiment140)
+a été obtenue sur le site de l'université de Stanford
+http://help.sentiment140.com/for-students. Un extrait en est donné dans
+le tableau 1. La base contient 498 tweets annotés manuellement. La base
+propose 6 champs corres- pondant aux informations suivantes : 1. la
+polarité du tweet : Chaque tweet est accompagné d'un score pouvant être
+égal à 0 (négatif), 2 (neutre) ou 4 (positif). 2. l'identifiant du tweet
+(2087) 3. la date du tweet (Sat May 16 23 :58 :44 UTC 2009) 4. la
+requête associée (lyx). Si pas de requête la valeur est NO\_ QUERY. 5.
+l'utilisateur qui a tweeté (robotickilldozr) 6. le texte du tweet(Lyx is
+cool)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}452}]:} \PY{n}{tokenizer} \PY{o}{=} \PY{n}{TweetTokenizer}\PY{p}{(}\PY{n}{strip\PYZus{}handles}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{reduce\PYZus{}len}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}453}]:} \PY{c+c1}{\PYZsh{} Import data}
+          \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{testdata.manual.2009.06.14.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{header}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}
+          \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+          \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}453}]:}     0                             2        3             4  \textbackslash{}
+          0   4  Mon May 11 03:17:40 UTC 2009  kindle2        tpryan   
+          1   4  Mon May 11 03:18:03 UTC 2009  kindle2        vcu451   
+          2   4  Mon May 11 03:18:54 UTC 2009  kindle2        chadfu   
+          3   4  Mon May 11 03:19:04 UTC 2009  kindle2         SIX15   
+          4   4  Mon May 11 03:21:41 UTC 2009  kindle2      yamarama   
+          5   4  Mon May 11 03:22:00 UTC 2009  kindle2  GeorgeVHulme   
+          6   0  Mon May 11 03:22:30 UTC 2009      aig       Seth937   
+          7   4  Mon May 11 03:26:10 UTC 2009   jquery     dcostalis   
+          8   4  Mon May 11 03:27:15 UTC 2009  twitter       PJ\_King   
+          9   4  Mon May 11 03:29:20 UTC 2009    obama   mandanicole   
+          10  2  Mon May 11 03:32:42 UTC 2009    obama          jpeb   
+          11  0  Mon May 11 03:32:48 UTC 2009    obama   kylesellers   
+          12  4  Mon May 11 03:33:38 UTC 2009    obama   theviewfans   
+          13  4  Mon May 11 05:05:58 UTC 2009     nike        MumsFP   
+          14  0  Mon May 11 05:06:22 UTC 2009     nike   vincentx24x   
+          
+                                                              5  
+          0   @stellargirl I loooooooovvvvvveee my Kindle2. {\ldots}  
+          1   Reading my kindle2{\ldots}  Love it{\ldots} Lee childs i{\ldots}  
+          2   Ok, first assesment of the \#kindle2 {\ldots}it fuck{\ldots}  
+          3   @kenburbary You'll love your Kindle2. I've had{\ldots}  
+          4   @mikefish  Fair enough. But i have the Kindle2{\ldots}  
+          5   @richardebaker no. it is too big. I'm quite ha{\ldots}  
+          6   Fuck this economy. I hate aig and their non lo{\ldots}  
+          7                       Jquery is my new best friend.  
+          8                                       Loves twitter  
+          9   how can you not love Obama? he makes jokes abo{\ldots}  
+          10  Check this video out -- President Obama at the{\ldots}  
+          11  @Karoli I firmly believe that Obama/Pelosi hav{\ldots}  
+          12  House Correspondents dinner was last night who{\ldots}  
+          13  Watchin Espn..Jus seen this new Nike Commerica{\ldots}  
+          14  dear nike, stop with the flywire. that shit is{\ldots}  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}454}]:} \PY{c+c1}{\PYZsh{} Compute sentiment}
+          \PY{n}{score} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+          \PY{n}{score}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Negatif}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n}{score}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Neutre}\PY{l+s+s1}{\PYZsq{}}
+          \PY{n}{score}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Positif}\PY{l+s+s1}{\PYZsq{}}
+          
+          \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{k}{lambda} \PY{n}{x} \PY{p}{:} \PY{n}{score}\PY{p}{[}\PY{n}{x}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{II. Prétraitements}\label{ii.-pretraitements}
+
+    Les tweets contiennent des caractères spéciaux susceptibles de nuire à
+la mise en place des méthodes d'analyse d'opinions. Ecrire un programme
+permettant pour chaque tweet de :
+
+\begin{itemize}
+\tightlist
+\item
+  récupérer le texte associé
+\item
+  segmenter en tokens
+\item
+  supprimer les urls
+\item
+  nettoyer les caractères inhérents à la structure d'un tweet
+\item
+  corriger les abréviations et les spécificités langagières des tweets à
+  l'aide du dictionnaire DicoS- lang (fichier SlangLookupTable.txt
+  disponible ici : https://clavel.wp.imt.fr/files/2018/06/
+  Lexiques.zip), encodage du fichier : latin1
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}455}]:} \PY{c+c1}{\PYZsh{} Slang lookup table}
+          \PY{n}{slang} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Lexiques/SlangLookupTable.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{latin1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{header}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}
+          \PY{n}{slang}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}455}]:}        0                   1
+          0    121          one to one
+          1  a/s/l  age, sex, location
+          2    adn         any day now
+          3  afaik    as far as I know
+          4    afk  away from keyboard
+\end{Verbatim}
+            
+    Vous préciserez dans le CR le nombre d'occurrences des caractères
+inhérents à la struc- ture du tweet et le nombre d'occurrences des
+'hash-tags' dans le corpus.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}456}]:} \PY{c+c1}{\PYZsh{} Count characters}
+          \PY{k}{def} \PY{n+nf}{count\PYZus{}char}\PY{p}{(}\PY{n}{txt}\PY{p}{)} \PY{p}{:}
+              
+              \PY{n}{count\PYZus{}hastag} \PY{o}{=} \PY{l+m+mi}{0}
+              \PY{n}{count\PYZus{}struc} \PY{o}{=} \PY{l+m+mi}{0}
+              
+              \PY{k}{for} \PY{n}{string} \PY{o+ow}{in} \PY{n}{txt} \PY{p}{:}
+                  \PY{n}{count\PYZus{}hastag} \PY{o}{+}\PY{o}{=} \PY{n}{string}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                  \PY{n}{count\PYZus{}struc} \PY{o}{+}\PY{o}{=} \PY{n}{string}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{@}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                  
+              \PY{k}{return} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{There are }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ hashtags and }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ tweet inherecent characters.}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{count\PYZus{}hastag}\PY{p}{,} \PY{n}{count\PYZus{}struc}\PY{p}{)}
+                  
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}457}]:} \PY{n}{count\PYZus{}char}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}457}]:} 'There are 52 hashtags and 128 tweet inherecent characters.'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}458}]:} \PY{c+c1}{\PYZsh{} Clean the text}
+          
+          \PY{k}{def} \PY{n+nf}{treat\PYZus{}text}\PY{p}{(}\PY{n}{txt}\PY{p}{)} \PY{p}{:}
+              
+              \PY{c+c1}{\PYZsh{} Remove URLs}
+              \PY{n}{txt} \PY{o}{=} \PY{n}{re}\PY{o}{.}\PY{n}{sub}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZca{}https?:}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{/}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{/.*[}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{n]*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{txt}\PY{p}{,} \PY{n}{flags}\PY{o}{=}\PY{n}{re}\PY{o}{.}\PY{n}{MULTILINE}\PY{p}{)}
+              
+              \PY{c+c1}{\PYZsh{} Replace characters}
+              \PY{n}{txt} \PY{o}{=} \PY{n}{txt}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{@}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+              \PY{n}{txt} \PY{o}{=} \PY{n}{txt}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+              
+              \PY{c+c1}{\PYZsh{} Tokenize}
+              \PY{n}{tokens} \PY{o}{=} \PY{n}{tokenizer}\PY{o}{.}\PY{n}{tokenize}\PY{p}{(}\PY{n}{txt}\PY{p}{)}
+              
+              \PY{c+c1}{\PYZsh{} Replace slang language}
+              \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tokens}\PY{p}{)}\PY{p}{)} \PY{p}{:}
+                  \PY{k}{if} \PY{n}{tokens}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{slang}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                      \PY{n}{tokens}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{slang}\PY{p}{[}\PY{n}{slang}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{==} \PY{n}{tokens}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+              
+              \PY{k}{return} \PY{n}{tokens}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}459}]:} \PY{n}{tokens} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{k}{lambda} \PY{n}{x} \PY{p}{:} \PY{n}{treat\PYZus{}text}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}460}]:} \PY{n}{tokens}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{15}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}460}]:} 0     [stellargirl, I, looovvveee, my, Kindle, 2, .,{\ldots}
+          1     [Reading, my, kindle, 2, {\ldots}, Love, it, {\ldots}, L{\ldots}
+          2     [Ok, ,, first, assesment, of, the, kindle, 2, {\ldots}
+          3     [kenburbary, You'll, love, your, Kindle, 2, .,{\ldots}
+          4     [mikefish, Fair, enough, ., But, i, have, the,{\ldots}
+          5     [richardebaker, no, ., it, is, too, big, ., I'{\ldots}
+          6     [Fuck, this, economy, ., I, hate, aig, and, th{\ldots}
+          7                [Jquery, is, my, new, best, friend, .]
+          8                                      [Loves, twitter]
+          9     [how, can, you, not, love, Obama, ?, he, makes{\ldots}
+          10    [Check, this, video, out, -, -, President, Oba{\ldots}
+          11    [Karoli, I, firmly, believe, that, Obama, /, P{\ldots}
+          12    [House, Correspondents, dinner, was, last, nig{\ldots}
+          13    [Watchin, Espn, .., Jus, seen, this, new, Nike{\ldots}
+          14    [dear, nike, ,, stop, with, the, flywire, ., t{\ldots}
+          Name: 5, dtype: object
+\end{Verbatim}
+            
+    \subsection{III. Etiquetage
+Grammatical}\label{iii.-etiquetage-grammatical}
+
+    Développer une fonction capable de déterminer la catégorie grammaticale
+(POS : Part Of Speech) de chaque mot du tweet en utilisant la commande
+suivante de la libraire nltk :
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}461}]:} \PY{k}{def} \PY{n+nf}{POS}\PY{p}{(}\PY{n}{tokens}\PY{p}{)} \PY{p}{:}
+              
+              \PY{n}{list\PYZus{}pos} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+              
+              \PY{c+c1}{\PYZsh{} For each token}
+              \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tokens}\PY{p}{:}
+                  
+                  \PY{c+c1}{\PYZsh{} Append the POS tag}
+                  \PY{n}{list\PYZus{}pos}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{nltk}\PY{o}{.}\PY{n}{pos\PYZus{}tag}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{)}
+                  
+              \PY{k}{return} \PY{n}{list\PYZus{}pos}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}462}]:} \PY{n}{taggedData} \PY{o}{=} \PY{n}{POS}\PY{p}{(}\PY{n}{tokens}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{IV. Algorithme de détection -
+V1}\label{iv.-algorithme-de-duxe9tection---v1}
+
+    NLTK dispose entre autre d'une interface pour manipuler la base de
+données WordNet. Ainsi, après installation de NLTK et du package
+WordNet, un utilisateur peut accéder à l'ensemble des synsets qui sont
+liés à un mot donné à l'aide d'une commande simple sous Python. Observez
+son fonctionnement à l'aide des lignes de code suivantes :
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}464}]:} \PY{k+kn}{from} \PY{n+nn}{nltk}\PY{n+nn}{.}\PY{n+nn}{corpus} \PY{k}{import} \PY{n}{wordnet} \PY{k}{as} \PY{n}{wn}
+          \PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dog}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}464}]:} [Synset('dog.n.01'),
+           Synset('frump.n.01'),
+           Synset('dog.n.03'),
+           Synset('cad.n.01'),
+           Synset('frank.n.02'),
+           Synset('pawl.n.01'),
+           Synset('andiron.n.01'),
+           Synset('chase.v.01')]
+\end{Verbatim}
+            
+    Pour cette étape, vous devez développer un programme permettant : - de
+récupérer uniquement les mots correspondant à des adjectifs, noms,
+adverbes et verbes
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}465}]:} \PY{k}{def} \PY{n+nf}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+              \PY{n}{list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+              
+              \PY{c+c1}{\PYZsh{} For each tweet}
+              \PY{k}{for} \PY{n}{tokens} \PY{o+ow}{in} \PY{n}{taggedData} \PY{p}{:}
+                  \PY{n}{intermediate\PYZus{}list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{c+c1}{\PYZsh{} For each token}
+                  \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tokens} \PY{p}{:} 
+                      \PY{c+c1}{\PYZsh{} Keep only tokens whose POS starts with the following letters}
+                      \PY{k}{if} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NN}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VB}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RB}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:}
+                          \PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{token}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{p}{)}
+              \PY{c+c1}{\PYZsh{} Returns a list of lists}
+              \PY{k}{return} \PY{n}{list\PYZus{}token}
+                          
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}466}]:} \PY{n}{filtered\PYZus{}words} \PY{o}{=} \PY{n}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{itemize}
+\tightlist
+\item
+  d'accéder aux scores (positifs et négatifs) des synsets dans la
+  librairie NLTK. Ce script définira dans une classe Python l'objet
+  SentiSynset sur le même modèle que le Synset développé dans NLTK pour
+  WordNet, et permettra de lire le tableau de SentiWordNet comme suit.
+\item
+  de calculer pour chaque mot les scores associés à leur premier synset,
+\item
+  de calculer pour chaque tweet la somme des scores positifs et négatifs
+  des SentiSynsets du tweet,
+\item
+  de comparez la somme des scores positifs et des scores négatifs de
+  chaque tweet pour décider de la classe à associer au tweet.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}467}]:} \PY{k}{def} \PY{n+nf}{compute\PYZus{}score\PYZus{}v1}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+              
+              \PY{c+c1}{\PYZsh{} Move the function defined above here}
+              \PY{k}{def} \PY{n+nf}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+                  \PY{n}{list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{k}{for} \PY{n}{tokens} \PY{o+ow}{in} \PY{n}{taggedData} \PY{p}{:}
+                      \PY{n}{intermediate\PYZus{}list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                      \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tokens} \PY{p}{:}
+                          \PY{k}{if} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NN}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VB}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RB}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:}
+                              \PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{token}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                      \PY{n}{list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{list\PYZus{}token}
+          
+              \PY{n}{filtered\PYZus{}words} \PY{o}{=} \PY{n}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+              \PY{n}{score\PYZus{}tweet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  
+              \PY{c+c1}{\PYZsh{} For each tweer}
+              \PY{k}{for} \PY{n}{tweet} \PY{o+ow}{in} \PY{n}{filtered\PYZus{}words} \PY{p}{:}
+                  
+                  \PY{c+c1}{\PYZsh{} Initalize the scores}
+                  \PY{n}{score} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}pos} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}neg} \PY{o}{=} \PY{l+m+mi}{0}
+                  
+                  \PY{c+c1}{\PYZsh{} For each token within the tweer}
+                  \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tweet} \PY{p}{:}
+                      
+                      \PY{k}{try} \PY{p}{:}
+                          \PY{c+c1}{\PYZsh{} Try to compute and add the positive and negative scores linked to the first wordnet}
+                          \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                          \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                              
+                      \PY{k}{except} \PY{p}{:} 
+                          \PY{k}{pass}
+                  
+                  \PY{c+c1}{\PYZsh{} Format of the output : score pos, score neg, label}
+                  \PY{k}{if} \PY{n}{score\PYZus{}pos} \PY{o}{\PYZgt{}} \PY{n}{score\PYZus{}neg} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Positif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  \PY{k}{elif} \PY{n}{score\PYZus{}pos} \PY{o}{==} \PY{n}{score\PYZus{}neg} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Neutre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  \PY{k}{else} \PY{p}{:} 
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Negatif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                      
+              \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{score\PYZus{}tweet}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}468}]:} \PY{n}{score\PYZus{}v1} \PY{o}{=} \PY{n}{compute\PYZus{}score\PYZus{}v1}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}469}]:} \PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{score\PYZus{}v1}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}469}]:} 0.5341365461847389
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}470}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n}{score\PYZus{}v1}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}470}]:} 266
+\end{Verbatim}
+            
+    L'accuracy atteint 53.4\% et on identifie correctement 266 labels sur
+les 498.
+
+    \subsection{Algorithme de détection -
+V2}\label{algorithme-de-duxe9tection---v2}
+
+    Vous aurez besoin de : - la liste des mots en anglais correspondant à
+des négations (fichier NegatingWordList.txt disponible ici :
+https://clavel.wp.imt.fr/files/2018/06/Lexiques.zip) - et celle
+correspondant aux modifieurs (fichier BoosterWordList.txt disponible ici
+: https://clavel.wp.imt.fr/files/2018/06/Lexiques.zip).
+
+Pour chaque mot, l'algorithme doit effectuer les opérations suivantes :
+- multiplie par 2 le score négatif et le score positif associés au mot
+si le mot précédent est un modifieur ; - utilise uniquement le score
+négatif du mot pour le score positif global du tweet et le score positif
+du mot pour le score négatif global du tweet si le mot précédent est une
+négation.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}471}]:} \PY{n}{negating} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{aren}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{arent}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{can}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cannot}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{cant}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{don}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dont}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{isn}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{isnt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{never}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{not}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{won}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wont}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wouldn}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wouldnt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}472}]:} \PY{n}{booster} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Lexiques/BoosterWordList.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{header}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,} \PY{n}{delimiter}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{booster}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}472}]:}                  0  1
+          0       absolutely  1
+          1       definitely  1
+          2        extremely  2
+          3           fuckin  2
+          4          fucking  2
+          5           hugely  2
+          6       incredibly  2
+          7             just -1
+          8   overwhelmingly  2
+          9               so  0
+          10            some -1
+          11             sum -1
+          12            very  1
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}480}]:} \PY{k}{def} \PY{n+nf}{compute\PYZus{}score\PYZus{}v2}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+              
+              \PY{k}{def} \PY{n+nf}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+                  \PY{n}{list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{k}{for} \PY{n}{tokens} \PY{o+ow}{in} \PY{n}{taggedData} \PY{p}{:}
+                      \PY{n}{intermediate\PYZus{}list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                      \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tokens} \PY{p}{:}
+                          \PY{k}{if} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NN}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VB}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RB}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:}
+                              \PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{token}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                      \PY{n}{list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{list\PYZus{}token}
+          
+              \PY{n}{filtered\PYZus{}words} \PY{o}{=} \PY{n}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+              \PY{n}{score\PYZus{}tweet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+              
+              \PY{k}{for} \PY{n}{tweet} \PY{o+ow}{in} \PY{n}{filtered\PYZus{}words} \PY{p}{:}
+                  \PY{n}{modifier} \PY{o}{=} \PY{k+kc}{None}
+                  \PY{n}{negator} \PY{o}{=} \PY{k+kc}{None}
+                  
+                  \PY{n}{score} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}pos} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}neg} \PY{o}{=} \PY{l+m+mi}{0}
+                  
+                  \PY{n}{total\PYZus{}negating} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{pos\PYZus{}negating} \PY{o}{=} \PY{l+m+mi}{0}
+              
+                  \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tweet} \PY{p}{:}
+                      
+                      \PY{k}{try} \PY{p}{:}
+                          \PY{c+c1}{\PYZsh{} Check if the previous word in negating list (and inverse scores)}
+                          \PY{k}{if} \PY{n}{negator} \PY{o+ow}{in} \PY{n}{negating} \PY{p}{:}
+                              \PY{c+c1}{\PYZsh{} Total negating words}
+                              \PY{n}{total\PYZus{}negating} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                              \PY{c+c1}{\PYZsh{} Check if previous word in booster list (and double score)}
+                              \PY{k}{if} \PY{n}{modifier} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                              \PY{k}{else} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                          \PY{k}{else} \PY{p}{:}
+                              \PY{k}{if} \PY{n}{modifier} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                              \PY{k}{else} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                              
+                      \PY{k}{except} \PY{p}{:} 
+                          \PY{k}{pass}
+                      
+                      \PY{c+c1}{\PYZsh{} Set the current token as the modifier and the negator for the next iteration}
+                      \PY{n}{modifier} \PY{o}{=} \PY{n}{token}
+                      \PY{n}{negator} \PY{o}{=} \PY{n}{token}
+                      
+                  
+                  \PY{k}{if} \PY{n}{score\PYZus{}pos} \PY{o}{\PYZgt{}} \PY{n}{score\PYZus{}neg} \PY{p}{:}
+                      \PY{c+c1}{\PYZsh{} Count number of positive tweets with negating words}
+                      \PY{k}{if} \PY{n}{total\PYZus{}negating} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0} \PY{p}{:}
+                          \PY{n}{pos\PYZus{}negating} \PY{o}{=}\PY{o}{+} \PY{l+m+mi}{1}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Positif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  \PY{k}{elif} \PY{n}{score\PYZus{}pos} \PY{o}{==} \PY{n}{score\PYZus{}neg} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Neutre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  \PY{k}{else} \PY{p}{:} 
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Negatif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+              \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Total number of negating terms in positive tweets : }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{pos\PYZus{}negating}\PY{p}{)}\PY{p}{)}
+              \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{score\PYZus{}tweet}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}481}]:} \PY{n}{score\PYZus{}v2} \PY{o}{=} \PY{n}{compute\PYZus{}score\PYZus{}v2}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Total number of negating terms in positive tweets : 0
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}482}]:} \PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{score\PYZus{}v2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}482}]:} 0.5381526104417671
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}483}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n}{score\PYZus{}v2}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}483}]:} 268
+\end{Verbatim}
+            
+    L'accuracy augmente légèrement avec cette nouvelle version, et on
+classifie correctement 2 exemples de plus.
+
+    \subsection{Algorithme de détection -
+V3}\label{algorithme-de-duxe9tection---v3}
+
+    Vous avez ici besoin du dictionnaire d'émoticons est disponible (fichier
+EmoticonLookupTable.txt disponible ici :
+https://clavel.wp.imt.fr/files/2018/06/Lexiques.zip).
+
+Cet algorithme demande en entrée deux listes supplémentaires : - une
+liste d'emoticons positifs - et une liste d'émoticons négatifs
+
+Les émoticons positifs rencontrés augmentent de 1 la valeur du score
+positif du tweet, tandis que les émoticons négatifs augmentent de 1 la
+valeur du score négatif du tweet.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}484}]:} \PY{n}{emo} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Lexiques/EmoticonLookupTable.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{header}\PY{o}{=}\PY{k+kc}{None}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}485}]:} \PY{n}{emo\PYZus{}pos} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{emo}\PY{p}{[}\PY{n}{emo}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+          \PY{n}{emo\PYZus{}neg} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{emo}\PY{p}{[}\PY{n}{emo}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZlt{}} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}492}]:} \PY{k}{def} \PY{n+nf}{compute\PYZus{}score\PYZus{}v3}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+              
+              \PY{k}{def} \PY{n+nf}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+                  \PY{n}{list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{k}{for} \PY{n}{tokens} \PY{o+ow}{in} \PY{n}{taggedData} \PY{p}{:}
+                      \PY{n}{intermediate\PYZus{}list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                      \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tokens} \PY{p}{:}
+                          \PY{k}{if} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NN}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VB}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RB}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:}
+                              \PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{token}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                      \PY{n}{list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{list\PYZus{}token}
+          
+              \PY{n}{filtered\PYZus{}words} \PY{o}{=} \PY{n}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+              \PY{n}{score\PYZus{}tweet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  
+              \PY{c+c1}{\PYZsh{} Total number of smileys}
+              \PY{n}{nb\PYZus{}smileys} \PY{o}{=} \PY{l+m+mi}{0} 
+              
+              \PY{k}{for} \PY{n}{tweet} \PY{o+ow}{in} \PY{n}{filtered\PYZus{}words} \PY{p}{:}
+                  
+                  \PY{n}{modifier} \PY{o}{=} \PY{k+kc}{None}
+                  \PY{n}{negator} \PY{o}{=} \PY{k+kc}{None}
+                  
+                  \PY{n}{score} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}pos} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}neg} \PY{o}{=} \PY{l+m+mi}{0}
+                  
+                  \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tweet} \PY{p}{:}
+          
+                      \PY{k}{try} \PY{p}{:}
+                          \PY{k}{if} \PY{n}{negator} \PY{o+ow}{in} \PY{n}{negating} \PY{p}{:}
+                              \PY{k}{if} \PY{n}{modifier} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                              \PY{k}{else} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                          \PY{k}{else} \PY{p}{:}
+                              \PY{k}{if} \PY{n}{modifier} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2}
+                              \PY{k}{else} \PY{p}{:}
+                                  \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                                  \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)}
+                      
+                      \PY{c+c1}{\PYZsh{} We now change the except and if the token does not have a synset, we check if it is an emoji}
+                      \PY{k}{except} \PY{p}{:} 
+                          
+                          \PY{k}{if} \PY{n}{token} \PY{o+ow}{in} \PY{n}{emo\PYZus{}pos} \PY{p}{:}
+                              \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                              \PY{n}{nb\PYZus{}smileys} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                          \PY{k}{elif} \PY{n}{token} \PY{o+ow}{in} \PY{n}{emo\PYZus{}neg} \PY{p}{:}
+                              \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                              \PY{n}{nb\PYZus{}smileys} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                      
+                      \PY{k}{else} \PY{p}{:}
+                          \PY{k}{pass}
+                      
+                      \PY{n}{modifier} \PY{o}{=} \PY{n}{token}
+                      \PY{n}{negator} \PY{o}{=} \PY{n}{token}
+                      
+                  
+                  \PY{k}{if} \PY{n}{score\PYZus{}pos} \PY{o}{\PYZgt{}} \PY{n}{score\PYZus{}neg} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Positif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  
+                  \PY{k}{elif} \PY{n}{score\PYZus{}pos} \PY{o}{==} \PY{n}{score\PYZus{}neg} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Neutre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  
+                  \PY{k}{else} \PY{p}{:} 
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Negatif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+              
+              \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Total number of smileys : }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{nb\PYZus{}smileys}\PY{p}{)}\PY{p}{)}
+              \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{score\PYZus{}tweet}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}493}]:} \PY{n}{score\PYZus{}v3} \PY{o}{=} \PY{n}{compute\PYZus{}score\PYZus{}v3}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Total number of smileys : 52
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}494}]:} \PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{score\PYZus{}v3}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}494}]:} 0.5742971887550201
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}495}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n}{score\PYZus{}v3}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}495}]:} 286
+\end{Verbatim}
+            
+    \subsection{Algorithme de détection -
+V4}\label{algorithme-de-duxe9tection---v4}
+
+    En analysant les sorties des algorithmes proposés précédemment, proposez
+votre propre algorithme d'analyse des opinions dans les tweets et les
+performances que vous obtenez.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}516}]:} \PY{k}{def} \PY{n+nf}{compute\PYZus{}score\PYZus{}v4}\PY{p}{(}\PY{n}{taggedData}\PY{p}{,} \PY{n}{factor}\PY{p}{)} \PY{p}{:}
+              
+              \PY{k}{def} \PY{n+nf}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)} \PY{p}{:}
+                  \PY{n}{list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                  \PY{k}{for} \PY{n}{tokens} \PY{o+ow}{in} \PY{n}{taggedData} \PY{p}{:}
+                      \PY{n}{intermediate\PYZus{}list\PYZus{}token} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+                      \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tokens} \PY{p}{:}
+                          \PY{k}{if} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{NN}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VB}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{or} \PY{n}{token}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{JJ}\PY{l+s+s1}{\PYZsq{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{RB}\PY{l+s+s1}{\PYZsq{}} \PY{p}{:}
+                              \PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{token}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                      \PY{n}{list\PYZus{}token}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{intermediate\PYZus{}list\PYZus{}token}\PY{p}{)}
+                  \PY{k}{return} \PY{n}{list\PYZus{}token}
+          
+              \PY{n}{filtered\PYZus{}words} \PY{o}{=} \PY{n}{sort\PYZus{}words}\PY{p}{(}\PY{n}{taggedData}\PY{p}{)}
+              \PY{n}{score\PYZus{}tweet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+              \PY{n}{nb\PYZus{}smileys} \PY{o}{=} \PY{l+m+mi}{0}
+              
+              \PY{k}{for} \PY{n}{tweet} \PY{o+ow}{in} \PY{n}{filtered\PYZus{}words} \PY{p}{:}
+                  \PY{n}{modifier} \PY{o}{=} \PY{k+kc}{None}
+                  \PY{n}{negator} \PY{o}{=} \PY{k+kc}{None}
+                  
+                  \PY{n}{score} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}pos} \PY{o}{=} \PY{l+m+mi}{0}
+                  \PY{n}{score\PYZus{}neg} \PY{o}{=} \PY{l+m+mi}{0}
+                  
+                  \PY{k}{for} \PY{n}{token} \PY{o+ow}{in} \PY{n}{tweet} \PY{p}{:}
+                      
+                      \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{=} \PY{l+m+mi}{0}
+                      \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{=} \PY{l+m+mi}{0}
+                      \PY{n}{score\PYZus{}obj\PYZus{}int} \PY{o}{=} \PY{l+m+mi}{0}
+                      
+                      \PY{n}{tot} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{)}
+                      
+                      \PY{k}{if} \PY{n}{tot} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0} \PY{p}{:}
+                          
+                          \PY{c+c1}{\PYZsh{} We now iterate through all the wordnets of a given token}
+                          \PY{c+c1}{\PYZsh{} And give each definition a decaying weight on the overall score (Factor \PYZca{} i where i is position)}
+                          \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{tot}\PY{p}{)} \PY{p}{:}
+                               
+                              \PY{k}{if} \PY{n}{negator} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                  \PY{k}{if} \PY{n}{modifier} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                      \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}obj\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{obj\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                  
+                                  \PY{k}{else} \PY{p}{:}
+                                      \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}obj\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{obj\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                              \PY{k}{else} \PY{p}{:}
+                                  \PY{k}{if} \PY{n}{modifier} \PY{o+ow}{in} \PY{n}{booster}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{p}{:}
+                                      \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}obj\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{obj\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                  \PY{k}{else} \PY{p}{:}
+                                      \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{pos\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{neg\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                                      \PY{n}{score\PYZus{}obj\PYZus{}int} \PY{o}{+}\PY{o}{=} \PY{n}{swn}\PY{o}{.}\PY{n}{senti\PYZus{}synset}\PY{p}{(}\PY{n}{wn}\PY{o}{.}\PY{n}{synsets}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{name}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{obj\PYZus{}score}\PY{p}{(}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{factor} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{n}{i}\PY{p}{)}
+                          
+                      \PY{k}{else} \PY{p}{:}
+                          \PY{k}{if} \PY{n}{token} \PY{o+ow}{in} \PY{n}{emo\PYZus{}pos} \PY{p}{:}
+                              \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                              \PY{n}{nb\PYZus{}smileys} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                          \PY{k}{elif} \PY{n}{token} \PY{o+ow}{in} \PY{n}{emo\PYZus{}neg} \PY{p}{:}
+                              \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                              \PY{n}{nb\PYZus{}smileys} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+                      
+                      \PY{c+c1}{\PYZsh{} We then normalize the total score to sum to 1 for each token}
+                      \PY{n}{total} \PY{o}{=} \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{+} \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{+} \PY{n}{score\PYZus{}obj\PYZus{}int}
+                      
+                      \PY{k}{if} \PY{n}{total} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0} \PY{p}{:}
+                          \PY{n}{score\PYZus{}pos} \PY{o}{+}\PY{o}{=} \PY{n}{score\PYZus{}pos\PYZus{}int} \PY{o}{/} \PY{n}{total}
+                          \PY{n}{score\PYZus{}neg} \PY{o}{+}\PY{o}{=} \PY{n}{score\PYZus{}neg\PYZus{}int} \PY{o}{/} \PY{n}{total}
+                      
+                      \PY{n}{modifier} \PY{o}{=} \PY{n}{token}
+                      \PY{n}{negator} \PY{o}{=} \PY{n}{token}
+                      
+                  \PY{c+c1}{\PYZsh{} Also change thresholds by allocation more values to Neutral}
+                  \PY{k}{if} \PY{n}{score\PYZus{}pos} \PY{o}{\PYZgt{}} \PY{n}{score\PYZus{}neg} \PY{o}{+} \PY{l+m+mf}{0.1} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Positif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  
+                  \PY{k}{elif} \PY{n}{score\PYZus{}pos} \PY{o}{\PYZlt{}} \PY{n}{score\PYZus{}neg} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.1} \PY{p}{:}
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Negatif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+                  
+                  \PY{k}{else} \PY{p}{:} 
+                      \PY{n}{score\PYZus{}tweet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{score\PYZus{}pos}\PY{p}{,} \PY{n}{score\PYZus{}neg}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Neutre}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+              
+              \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Number of smileys : }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{nb\PYZus{}smileys}\PY{p}{)}\PY{p}{)}
+              \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{score\PYZus{}tweet}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}536}]:} \PY{n}{score\PYZus{}v4} \PY{o}{=} \PY{n}{compute\PYZus{}score\PYZus{}v4}\PY{p}{(}\PY{n}{taggedData}\PY{p}{,} \PY{l+m+mf}{0.9}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Number of smileys : 52
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}537}]:} \PY{n}{accuracy\PYZus{}score}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{score\PYZus{}v4}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}537}]:} 0.642570281124498
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}529}]:} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sent}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n}{score\PYZus{}v4}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}529}]:} 320
+\end{Verbatim}
+            
+    Le résultat global est amélioré de quasiment 7\% avec le seuil rajouté
+et le facteur de poids.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

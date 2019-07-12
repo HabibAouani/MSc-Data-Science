@@ -1,0 +1,11 @@
+# Remarks on PageRank for task 5 : 
+# What do you observe ? Do you see flaws, or ways that this algorithm can be improved ?
+# Other remarks
+
+This algorithm is heavy to run, since it requires :
+- to create dictionnaries at each step
+- this requires a lot of iterations between map and reduce phases
+- this typically cannot be parallelized, since it's by definition a sequential process
+- crawlers can be really slow in practice
+
+We are considering the full state of the graph, so in terms of memory, at scale, this kind of approach requires a enormous storage capacity.

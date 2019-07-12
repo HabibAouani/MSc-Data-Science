@@ -1,0 +1,36 @@
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="js/d3/d3.js"></script>
+  <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <style>
+    body { text-align:center;
+           background-color:rgb(240, 240, 240);}
+
+    circle {}.d3-tip {
+                      line-height: 1;
+                      font-weight: bold;
+                      padding: 12px;
+                      background: rgba(0, 0, 0, 0.8);
+                      color: #fff;
+                      border-radius: 2px;
+                     }
+  </style>
+  <title> France - Population and Density</title>
+</head>
+<body>
+  <h1 style="font-face:Georgia;font-size:60;color:green">France</h1>
+  <h2><i>Population and Density map</i></h2>
+  <div id="map"></div>
+  <br>
+  <br>
+  <h2><i>Density histogram</i></h2>
+  <div id="hist_density"></div>
+  <br>
+  <br>
+  <h2><i>Population histogram</i></h2>
+  <div id="hist_population"></div>
+  <script type="text/javascript" src="js/hello-france.js"></script>
+</body>
+</html>

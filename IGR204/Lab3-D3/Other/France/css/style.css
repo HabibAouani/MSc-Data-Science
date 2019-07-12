@@ -1,0 +1,73 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+
+#france-map, #histogram-density,h1{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body{
+  background-color: black;
+  /*opacity: 1;*/
+}
+
+div.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.main > * {
+    flex : 1 auto;
+}
+
+div#france-map{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*.#histogram-density , #histogram-population{*/
+/*    width:300px;*/
+/*    height: 900px;*/
+/*}*/
+/*#france-map{*/
+/*    width: 600px;*/
+/*    height: 900px;*/
+/*}*/
+g.x-axis, g.y-axis, g.color-axis, path.domain, line, text{
+  stroke: white;
+}
+
+text{
+  fill: white;
+}
+
+h1, h2{
+  color : white;
+  text-align: center;
+}
+
+/*g.map-legend {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  flex-wrap: wrap;*/
+/*}*/
+
+div.tooltip {
+    position: absolute;
+    text-align: left;
+    width: 150px;
+    height: 80px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+  opacity: 0;
+}

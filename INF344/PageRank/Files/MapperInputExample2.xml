@@ -1,0 +1,34 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10">
+    <page>
+        <title>Page1</title>
+        <revision>
+            <text>
+                I am linking to [[Page 2]] and the [[Third Page]].
+            </text>
+        </revision>
+    </page>
+    <page>
+        <title>Page 2</title>
+        <revision>
+            <text>
+                Just linking back to [[Page1]]
+            </text>
+        </revision>
+    </page>
+    <page>
+        <title>Third Page</title>
+        <revision>
+            <text>
+                [[Page1]] is good, check out [[P4]] too!
+            </text>
+        </revision>
+    </page>
+    <page>
+        <title>P4</title>
+        <revision>
+            <text>
+                Nothing there (but I exist, contrary to [[Page 5]])
+            </text>
+        </revision>
+    </page>
+</mediawiki>
